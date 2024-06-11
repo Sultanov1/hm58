@@ -4,7 +4,13 @@ import {useState} from 'react';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
+
+
+  const modalButtons = [
+    {type: 'primary', label: 'Continue', onClick: () => setShowAlert(true)},
+    {type: 'danger', label: 'Close', onClick: () => setShowModal(false)}
+  ]
 
   return (
     <>
@@ -16,12 +22,9 @@ const App = () => {
       <Alert type="success">
         This is a success type alert
       </Alert>
-      <Modal show={showModal} title="Some kinda modal title" onClose={() => setShowModal(false)}>
+      <Modal show={showModal} title="Some kinda modal title" onClose={() => setShowModal(false)} buttons={modalButtons}>
         <div className="modal-body">
           <p>This is modal content</p>
-        </div>
-        <div className="modal-footer">
-          <button className="btn btn-danger" onClick={() => setShowModal(false)}>Cancel</button>
         </div>
       </Modal>
       <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
