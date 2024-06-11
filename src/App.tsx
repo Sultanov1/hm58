@@ -1,5 +1,5 @@
 import Modal from './components/Modal/Modal';
-import Alert from './Alert/Alert';
+import Alert from './components/Alert/Alert';
 import {useState} from 'react';
 
 const App = () => {
