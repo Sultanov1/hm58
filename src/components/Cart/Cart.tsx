@@ -6,9 +6,9 @@ const Cart = () => {
 
   return (
     <>
-      <Modal show={showModal} title="Order" onClose={() => setShowModal(false)}>
+      <Modal show={showModal} title="Some kinda modal title" onClose={() => setShowModal(false)}>
         <div className='modal-body'>
-          Modal
+          <p>This is modal content</p>
         </div>
         <div className='modal-footer'>
           <button className='btn btn-danger' onClick={() => setShowModal(false)}>Cancel</button>
